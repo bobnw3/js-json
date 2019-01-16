@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/nw3-json.js"></script>
+    <table border="1" width="400" height="300">
+        <thead>
+            <tr>
+                <th colspan="4" class="title">充值额度详情</th>
+            </tr>
+        </thead>
+        <tbody class="text-c">
+            <tr>
+                <td colspan="4" class="weight">基本信息</td>
+            </tr>
+            <tr> 
+                <td>充值卡额度</td>
+                <td><div id="price"></div></td>
+                <td>赠送积分</td>
+                <td><div id="integral"></div></td>
+            </tr>
+            <tr> 
+                    <td>类型</td>
+                    <td><select name="seltype" id="seltype"><option value="">请选择</option><option value="1">A</option><option value="21">B</option></select></td>
+                    <td>checkbox</td>
+                    <td><input type="checkbox" name="cbox" value="1" id="cbox" >选择A<input type="checkbox" name="cbox"id="s2" value="2">选择B </td>
+                </tr>
+            <tr>
+                <td>备注 </td>
+                <td><div id="remark"></div></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+             <tr><td colspan="4"><input type="button" name="Get" value="GET_SUBMIT" onclick="getSubmit();"></td></tr>
+        </tbody>	
+    </table>
+    <script lang="javascript">
+        /**
+         * 模拟接口返回JSON，实际中这里可以是服务器接口返回JSON
+         * {"C":"SUCCESS","D":[{"price":"123.00","integral":"100","remark":"回填JSON内容","seltype":"1"}]}
+         * 目前支持自动回填label,text,textarea,select,radio,checkbox
+         */
+        var data={"C":"SUCCESS","D":[{"price":"123.00","integral":"100","remark":"回填JSON内容","seltype":"1","cbox":"1"}]};
+        NW3.DEVFORM.setFormAutoValue(data.D);
+        function getSubmit(){
+            var _ac={"action":"sbumitFormEx","p":[{"n":"seltype","v":""+$('#seltype').val()+""}]};
+	        NW3.DEVFORM.nw3GetData('http://localhost/api.aspx',_ac.action,_ac);
+        };
+    </script>
+</body>
+</html>
