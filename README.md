@@ -14,7 +14,7 @@ NW3.DEVFORM.setFormAutoValue(data.D);
 
 2：提交拼接函数
 
-&lt;select name="seltype" id="seltype"><option value="">请选择</option><option value="1">A</option><option value="21">B</option></select&gt;
+&lt;select name="seltype" id="seltype"&gt;&lt;option value=""&gt;请选择&lt;/option&gt;&lt;option value="1"&gt;A&lt;/option&gt;&lt;option value="21"&gt;B&lt;/option&gt;&lt;/select&gt;
 
 var _ac={"action":"sbumitFormEx","p":[{"n":"seltype","v":""+$('#seltype').val()+""}]};
 NW3.DEVFORM.nw3GetData('http://localhost/api.aspx',_ac.action,_ac);
