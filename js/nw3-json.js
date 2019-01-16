@@ -205,10 +205,8 @@ NW3.DEVFORM = NW3.prototype = {
         }
 	},
 	nw3GetData:function(dshopHost,paction,pdata){
-	/** 提交参数，根据传入json，自动加入签名与时间戳记
-	* 例如：https://XXX.com?abs=888
-	× 调用方法 var res=NW3.DEVFORM.GUV('abs');
-	* 结果 res=888
+	/** 
+	 * 提交参数，根据传入json，自动加入签名与时间戳记
 	*/
 		var par=pdata.p;
 		var token ='token', _timestamp = new Date().format("yyyy-MM-dd hh:mm:ss"), _action = paction;
