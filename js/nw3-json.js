@@ -1,11 +1,12 @@
 /**
 * NW3后台绘制基本类库 
 * 此类库主要用于自动拼接请求接口传入参数，根据页面接口数据自动回填页面控件
-* v 0.2
+* nw3.json.js v 0.2
+* http://www.noahweb.net/
 * @date 2016-1-22
 * @author bob.nw
 * Licensed under MIT license.
-*  http://opensource.org/licenses/MIT
+* http://opensource.org/licenses/MIT
 */
 var NW3 = NW3 ||
 {};
