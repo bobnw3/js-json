@@ -8,8 +8,7 @@
 * Licensed under MIT license.
 * http://opensource.org/licenses/MIT
 */
-var NW3 = NW3 ||
-{};
+var NW3 = NW3 || {};
 var DEV=DEV||{};
 
 var dshopPData={};
@@ -60,13 +59,11 @@ NW3.DEVFORM = NW3.prototype = {
         }
         return '';
     },
-
 	nw3SelectSetObj:function(divs,_jsons,_option,obj){
 		if(_jsons.length>0){
 			$("#"+divs).empty();
 			$("#"+divs).append("<option value=''>请选择</option>");
 			var _n='',_v='',sed='';
-			
 			for(var _i=0;_i<_jsons.length;_i++){
 				_n=eval("_jsons[_i]."+_option.n);
 				_v=eval("_jsons[_i]."+_option.v);
@@ -88,7 +85,6 @@ NW3.DEVFORM = NW3.prototype = {
 		   }
 		}); 
 	},
-	
 	addButtonPostClickForTableStr:function(_formid){
 		var nvl=$("#"+_formid).serialize();
 		var _ph=[];
